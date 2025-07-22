@@ -9,9 +9,7 @@ import {
   Zap, 
   TrendingUp, 
   Calendar,
-  Clock,
-  Target,
-  Award
+  Target
 } from 'lucide-react';
 
 const Dashboard = () => {

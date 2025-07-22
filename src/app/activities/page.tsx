@@ -161,7 +161,7 @@ const page = () => {
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-semibold text-white flex items-center">
                   <Calendar className="w-5 h-5 mr-2" />
-                  Today's Activities
+                  Today&apos;s Activities
                 </h3>
                 <Clock className="w-5 h-5 text-gray-400" />
               </div>

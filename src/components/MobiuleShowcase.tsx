@@ -4,6 +4,7 @@ import { Play } from 'lucide-react';
 import { motion } from 'framer-motion';
 // import { useState, useRef } from 'React';
 import { useState,useRef } from 'react';
+import Image from 'next/image';
 import NoSSR from './NoSRR';
 
 const MobileShowcase = () => {
@@ -49,19 +50,6 @@ const MobileShowcase = () => {
       description: 'Wake up relaxed and refreshed with our gradual-waking Smart Alarm'
     }
   ];
-
-  // Star animation variants
-  const starVariants = {
-    animate: {
-      rotate: 360,
-      transition: {
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear"
-      }
-    }
-  };
-
   return (
     <NoSSR>
     <div className="relative py-16 overflow-hidde bg-black">
@@ -77,7 +65,6 @@ const MobileShowcase = () => {
               width: `${Math.random() * 3 + 1}px`,
               height: `${Math.random() * 3 + 1}px`,
             }}
-            // variants={starVariants}
             animate="animate"
           />
         ))}
@@ -96,7 +83,7 @@ const MobileShowcase = () => {
               {/* Phone Container */}
               <div className="relative h-[610px] w-[368px]">
                 {/* Phone Frame SVG */}
-                <img 
+                <Image 
                   src="https://endel.io/devices/iphone.svg" 
                   alt="iPhone 15 pro" 
                   className="absolute inset-0 h-full w-full"
@@ -112,8 +99,8 @@ const MobileShowcase = () => {
                         {item.sources.map((source, i) => (
                           <source key={i} srcSet={source.srcSet} type={source.type} />
                         ))}
-                        <img
-                          src={item.src}
+                        <Image
+                          src={item.src ?? ''}
                           alt={item.alt}
                           className="ml-4 relative w-full max-w-[340px] aspect-[2/3] overflow-hidden rounded-t-4xl"
                           width={368}
@@ -121,8 +108,8 @@ const MobileShowcase = () => {
                         />
                       </picture>
                     ) : (
-                      <img
-                        src={item.src}
+                      <Image
+                        src={item.src ?? ''}
                         alt={item.alt}
                         className="ml-4 relative w-full max-w-[340px] aspect-[2/3] overflow-hidden rounded-t-4xl"
                         width={368}
@@ -141,8 +128,8 @@ const MobileShowcase = () => {
                           >
                             <Play className="h-6 w-6 text-black fill-current" />
                           </button>
-                          <img
-                            src={item.cover}
+                          <Image
+                            src={item.cover ?? ''}
                             alt={item.alt}
                             className="absolute inset-0 h-full w-full object-cover"
                             width={368}

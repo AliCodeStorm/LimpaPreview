@@ -12,9 +12,7 @@ import {
   Edit,
   Bell,
   Shield,
-  Smartphone,
-  Moon,
-  Sun
+  Smartphone
 } from 'lucide-react';
 
 type Achievement = {
